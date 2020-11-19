@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Happy House</title>
+    <title>findPassword</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet"
@@ -60,14 +60,11 @@
     </style>
     <script type="text/javascript">
 	$(document).ready(function() {
-		$("#loginBtn").click(function() {
+		$("#findBtn").click(function() {
 			if($("#userid").val() == "") {
-				alert("아이디를 입력해주세요");
+				alert("비밀번호를 찾고자 하는 아이디를 입력해 주세요.");
 				return;
-			} else if($("#userpwd").val() == "") {
-				alert("비밀번호를 입력해주세요");
-				return;
-			} 
+			}
 		});
 	});
 </script>
@@ -77,34 +74,35 @@
     <div class="container" align="center">
         <div class="col-lg-6" align="center">
             <div class="body">
-                <h3>HappyHouse 로그인!</h3>
+                <h3>HappyHouse 비밀번호찾기!</h3>
                 <c:if test="${not empty errorMsg}">
                 	<p class="error">${errorMsg}</p>
                 </c:if>
-                <form action="${pageContext.request.contextPath}/user/login" method="post">
-                    <fieldset>
-                        <div class="form-group" align="left">
-                            <label for=ID style="display: block">ID:</label>
-                            <input type="text" class="form-control" id="userid" name="userid" required>
-                        </div>
-                        <div class="form-group" align="left">
-                            <label for="PW">Password:</label> 
-                            <input type="password" class="form-control" id="userpwd" name="userpwd" required>
-                        </div>
-                        <div class="form-group form-check" align="right">
-						    <label class="form-check-label">
-						      <input class="form-check-input" type="checkbox" id="idsave" name="idsave" value="saveok"${idck}> 아이디저장 
-						    </label>
+                <c:if test="${not empty userpwd }">
+                	<c:if test="${userpwd eq 'notExsit'}">
+                		<script type="text/javascript">
+                			alert("없는 아이디입니다.");
+                		</script>
+                	</c:if>
+                	<c:if test="${userpwd ne 'notExsit'}">
+	                	<script type="text/javascript">
+	                		alert("비밀번호는'${userpwd}'입니다.");
+	                	</script>
+                	</c:if>
+                </c:if>
+					<form action="${pageContext.request.contextPath}/user/findpassword" method="post">
+						<div class="form-group" align="left">
+							<label for=ID style="display: block">ID:</label> 
+							<input type="text" class="form-control" id="userid" name="userid" required>
 						</div>
-                        <div style="text-align: right; display: block">
-                        	<input type="submit" id="loginBtn" class="btn btn-warning" value="로그인">
-                        </div>
-                        <div style="text-align: right; margin-top:5px; display: block">
-                        	<a href="${pageContext.request.contextPath}/user/findpassword"> 비밀번호를 잊으셨나요? </a>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
+						<div style="text-align: right; display: block">
+							<input type="submit" id="findBtn" class="btn btn-warning" value="비밀번호찾기">
+						</div>
+						<div style="text-align: right; margin-top: 5px; display: block">
+							<a href="${pageContext.request.contextPath}/user/login"> 로그인 하러가기! </a>
+						</div>
+					</form>
+				</div>
 
         </div>
     </div>

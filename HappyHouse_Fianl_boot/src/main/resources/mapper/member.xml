@@ -40,4 +40,10 @@
 		delete from happyhouse_member
 		where userid = #{userid}
 	</delete>
+	
+	<select id="findPassword" resultType="String">
+		select userpwd
+		from happyhouse_member
+		where userid = #{userid}
+	</select>
 </mapper>

@@ -17,5 +17,6 @@ public interface UserMapper {
 	public int userRegister(MemberDTO memberDto);
 	public int userModify(MemberDTO memberDto);
 	public void userDelete(String userid);
+	public String findPassword(String userid);
 	
 }

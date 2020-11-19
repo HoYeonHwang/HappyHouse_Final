@@ -49,4 +49,10 @@ public class UserServiceImpl implements UserService {
 		sqlSession.getMapper(UserMapper.class).userDelete(userid);
 	}
 
+	@Override
+	public String findPassword(String userid) {
+		return sqlSession.getMapper(UserMapper.class).findPassword(userid);
+		
+	}
+
 }

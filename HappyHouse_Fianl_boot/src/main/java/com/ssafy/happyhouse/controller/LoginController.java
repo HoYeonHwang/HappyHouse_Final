@@ -122,5 +122,24 @@ public class LoginController extends HttpServlet {
 		
 		return "index";
 	}
+	
+	// 비밀번호 찾기 -> POST
+	@RequestMapping(value = "/findpassword", method = RequestMethod.GET)
+	public String findPassword(HttpSession session) {
+		return "user/findPassword";
+	}
+	
+	@RequestMapping(value = "/findpassword", method = RequestMethod.POST)
+	public String findPassword(@RequestParam String userid, Model model, HttpSession session) {
+		String pw = userService.findPassword(userid);
+		System.out.println(pw);
+		if(pw != null) {
+			model.addAttribute("userpwd", pw);
+		}
+		else {
+			model.addAttribute("userpwd", "notExsit");
+		}
+		return "user/findPassword";
+	}
 
 }

@@ -13,5 +13,6 @@ public interface UserService {
 	public int userRegister(MemberDTO memberDto); // 유저 등록
 	public int userModify(MemberDTO memberDto); // 유저 정보 수정
 	public void userDelete(String userid); // 유저 정보 삭제
+	public String findPassword(String userid); // 비밀번호 찾기
 	
 }
