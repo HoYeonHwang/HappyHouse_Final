@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.QnaMapper">
+    
+    <select id="searchAll" resultType="com.ssafy.happyhouse.model.QnaDto">
+        SELECT *
+        FROM happyhouse_qna
+    </select>
+    <select id="search" resultType="com.ssafy.happyhouse.model.QnaDto">
+        SELECT qid, qtitle, qcontent, qdate, qviews, qwriter
+        FROM happyhouse_qna
+        WHERE qid = #{qid}
+    </select>
+    <insert id="insert" parameterType="com.ssafy.happyhouse.model.QnaDto">
+        INSERT INTO happyhouse_qna (qtitle, qcontent, qdate, qviews, qwriter)
+        values(#{qtitle}, #{qcontent}, NOW(), 0, #{qwriter})
+    </insert>
+    <delete id="delete" parameterType="com.ssafy.happyhouse.model.QnaDto">
+        DELETE FROM happyhouse_qna
+        WHERE qid = #{qid}
+    </delete>
+    <update id="update" parameterType="QnaDto">
+        UPDATE happyhouse_qna
+        SET qtitle = #{qtitle}, qcontent = #{qcontent}
+        where qid = #{qid}
+    </update>
+    <insert id="addComment" parameterType="QnaCommentDto">
+    	INSERT INTO happyhouse_qna_comment(qid, qctitle, qccontent, qcdate, qcwriter)
+    	VALUES(#{qid}, #{qctitle}, #{qccontent}, NOW(), #{qcwriter})
+    </insert>
+    <select id="searchAllComment" resultType="QnaCommentDto">
+    	SELECT *
+    	FROM happyhouse_qna_comment
+    	WHERE qid = #{qid}
+    </select>
+    <select id="searchName" resultType="QnaDto">
+    	SELECT *
+    	FROM happyhouse_qna
+    	WHERE qtitle LIKE CONCAT('%', #{qtitle}, '%')
+    </select>
+    <update id="updateViews">
+    	UPDATE happyhouse_qna
+    	SET qviews = qviews+1
+    	WHERE qid = #{qid}
+    </update>
+</mapper>
