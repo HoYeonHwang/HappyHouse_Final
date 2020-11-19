@@ -49,14 +49,19 @@
 
         .wrapper {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: column; 
+            align-items: center; 
             justify-content: center;
         }
         
         .error {
         	color: red;
         }
+        .bgi {
+        background-image: url( "../images/12.jpg" );
+        background-repeat : no-repeat;
+		background-size : cover;
+      }
     </style>
     <script type="text/javascript">
 	$(document).ready(function() {
@@ -73,15 +78,16 @@
 </script>
 </head>
 <body>
-<div class="wrapper">
-    <div class="container" align="center">
-        <div class="col-lg-6" align="center">
+<div class="bgi">
+<div class="wrapper" >
+    <div class="wrapper style6" >
+        <div class="col-lg-12" align="center">
             <div class="body">
                 <h3>HappyHouse 로그인!</h3>
                 <c:if test="${not empty errorMsg}">
                 	<p class="error">${errorMsg}</p>
                 </c:if>
-                <form action="${pageContext.request.contextPath}/user/login" method="post">
+                <form action="${pageContext.request.contextPath}/user/login.do" method="post">
                     <fieldset>
                         <div class="form-group" align="left">
                             <label for=ID style="display: block">ID:</label>
@@ -100,12 +106,12 @@
                         	<input type="submit" id="loginBtn" class="btn btn-warning" value="로그인">
                         </div>
                         <div style="text-align: right; margin-top:5px; display: block">
-                        	<a href="${pageContext.request.contextPath}/user/findpassword"> 비밀번호를 잊으셨나요? </a>
+                        	<a href="${pageContext.request.contextPath}/user/password.do"> 비밀번호를 잊으셨나요? </a>
                         </div>
                     </fieldset>
                 </form>
             </div>
-
+			</div>
         </div>
     </div>
 </div>

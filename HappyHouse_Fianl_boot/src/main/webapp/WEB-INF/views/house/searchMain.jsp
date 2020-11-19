@@ -7,58 +7,29 @@
 <head>
 <meta charset="UTF-8">
 <title>APT 매매</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" href="img/favicon.ico">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 	$("#DetailBtn").on( "click", function() {
 	    $("#test_modal").modal();
 	});
-
 	</script>
 <style>
-html, body {
-	height: 100%;
-}
-
-.wrapper {
-	height: 85%;
-}
-
-/* nav start */
-.btn-primary {
-	margin-left: 20px;
-}
-
-h2 {
-	color: white;
-	font-weight: bold;
-}
-
-h1 {
-	font-size: 50px;
-	color: black;
-}
-
-h3 {
-	color: black;
-	font-weight: bold;
-}
+	.a {
+        background-image: url( "../images/12.jpg" );
+        background-repeat : no-repeat;
+		background-size : cover;
+      }
 </style>
 </head>
 
 <body>
-	<div class="container">
-		<section id="index_section">
-			<div class="card col-sm-12 mt-1" style="min-height: 850px;">
-				<div class="card-body">
 					<script>
 				let colorArr = ['table-primary','table-success','table-danger'];
 				$(document).ready(function(){
@@ -223,33 +194,54 @@ h3 {
 					});//each
 				};
 				</script>
-					<div class="container" align="center">
-						<div class="col-lg-6" align="center">
-							<h2 style="color: black">어떤 동네,</h2>
-							<h2 style="color: black">어떤 방에 살고 싶으신가요?</h2>
-							<span> <input type="text" class="form-control" id="search"
-								name="search"> <select id="villa"><option
-										value="">선택</option>
-									<option value="Apt">아파트</option>
-									<option value="villa">단독주택</option></select> <input type="button"
-								id="SearchBtn" class="btn btn-primary" value="방 찾기"> <input
-								type="button" id="DetailBtn" class="btn btn-warning"
-								value="상세 검색" data-toggle="modal" data-target="#detailModal">
+				<div class ="a">
+				<section id="banner" >
+				<div class="inner">
+					<h1>당신의 집 뿐만아니라,</h1><br>
+					<h1>당신의 생활을 삽니다.</h1>
+					SSAFY - HappyHouse 프로젝트</p>
+				</div>
+			</section>
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="box">
+							<div class="image fit">
+								<img src="images/4.jpg" alt="" />
+							</div>
+							<div class="content">
+								<header class="align-center">
+									<h2>어떤 동네</h2>
+									<h2>어떤 방에서</h2> 
+									<h2>살고 싶으신가요?</h2>
+								</header>
+								<hr />
+								<input type="text" id="search"name="search"> <select id="villa">
+								<option value="">선택</option>
+								<option value="Apt">아파트</option>
+								<option value="villa">단독주택</option></select> 
+								<input type="button" id="SearchBtn" value="방 찾기">
+								 <input type="button" id="DetailBtn" value="상세 검색" data-toggle="modal" data-target="#detailModal">
 								<input type="hidden" id="action" name="action" value="search"></input>
-							</span>
+							</div>
 						</div>
 					</div>
-
-					<div class="modal fade" id="detailModal" role="dialog">
-						<div class="modal-dialog modal-lg">
-							<!-- Modal content-->
-							<div class="modal-content">
-								<div class="modal-header">
-									<h4 class="modal-title">상세 정보 검색</h4>
-									<button type="button" class="close" data-dismiss="modal">&times;</button>
-								</div>
-								<div class="modal-body">
-									<form id="confirmform" method="post" action="">
+				</div>
+			</section>
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div>
+						<div class="box">
+							<div class="image fit">
+								<img src="images/4.jpg" alt="" />
+							</div>
+							<div class="content">
+								<header class="align-center">
+									<h2>동네를</h2>
+									<h2>자세히 알고 싶으신가요?</h2>
+								</header>
+								<hr />
+								<form id="confirmform" method="post" action="">
 										<div class="form-group" align="left">
 											<table class="table table-striped">
 												<tr>
@@ -269,15 +261,11 @@ h3 {
 										<button type="button" id="cancleBtn" class="btn btn-danger"
 											data-dismiss="modal">취소</button>
 									</form>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default"
-										data-dismiss="modal">Close</button>
-								</div>
 							</div>
 						</div>
 					</div>
-
+				</div>
+			</section>
 					<table class="table mt-2">
 						<thead>
 							<tr>
@@ -326,8 +314,5 @@ h3 {
 					}
 				</script>
 				</div>
-			</div>
-		</section>
-	</div>
 </body>
 </html>

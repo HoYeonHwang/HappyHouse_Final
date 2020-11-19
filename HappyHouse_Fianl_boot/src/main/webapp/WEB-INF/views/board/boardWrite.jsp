@@ -9,51 +9,16 @@
 	<meta charset="UTF-8">
 	<title>Member 화면</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<style>
-		html, body {
-	            height: 100%;
-	        }
-	    .wrapper {
-	        height: 85%;
-	    }
-	
-	    .btn-primary {
-	        margin-left: 20px;
-	    }
-	
-	    h2 {
-	        color: white;
-	        font-weight: bold;
-	    }
-	
-	    h1 {
-	        font-size: 50px;
-	        color: black;
-	    }
-	    
-	    h3 {
-	    	color: black;
-	        font-weight: bold;
-	    }
-	
-	    .wrapper {
-	        display: flex;
-	        flex-direction: column;
-	        align-items: center;
-	        justify-content: center;
-	    }
-	    
-	    .error {
-	    	color: red;
-	    }
-	</style>
+	.a {
+        background-image: url( "../images/6.jpg" );
+        background-repeat : no-repeat;
+		background-size : cover;
+      }
+</style>
 </head>
 <body>
+<div class="a">
 	<div class="wrapper">
 		<h1>Notice</h1>
 		<form action="${pageContext.request.contextPath}/board/boardProcess" method="post">
@@ -70,5 +35,7 @@
              	</div>
 		</form>
 	</div>
+	</div>
+
 </body>
 </html>

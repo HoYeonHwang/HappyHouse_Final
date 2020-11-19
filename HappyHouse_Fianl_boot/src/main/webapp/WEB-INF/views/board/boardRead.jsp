@@ -8,10 +8,6 @@
 <meta charset="UTF-8">
 <title>글 읽기</title>
 <link rel="shortcut icon" href="img/favicon.ico">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$("#confirmBtn").click(function(){
@@ -58,70 +54,15 @@
 	})
 	</script>
 	<style>
-	html, body {
-            height: 100%;
-        }
-
-        .wrapper {
-            height: 85%;
-        }
-
-        /* nav start */
-        .btn-primary {
-            margin-left: 20px;
-        }
-
-        h2 {
-            color: white;
-            font-weight: bold;
-        }
-
-        h1 {
-            font-size: 50px;
-            color: black;
-        }
-        
-        h3 {
-        	color: black;
-            font-weight: bold;
-        }
-
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-		.main_context{
-			position:relative;
-			text-align : center;
-			top:-250px;
-			z-index: 0;
-		}
-		#index_h2{
-			color : white;
-			position: relative;
-		}
-		#index_p{
-			color:white;
-			position:relative;
-		}
-		#main_img{
-			width:100%;
-			height:400px;
-			z-index : -1;
-			opacity: 0.8;
-			position:relative;
-		}
-		#btn_sitemap{
-			position:relative;
-		}
-		#notice_title{
-			background-color: grey;
-		}
-	</style>
+	.a {
+        background-image: url( "../images/6.jpg" );
+        background-repeat : no-repeat;
+		background-size : cover;
+      }
+</style>
 </head>
 <body>
+<div class="a">
 	<div class="container">
 		<header id="index_header" class="jumbotron text-center mb-1"></header>
 		<table border="1" class="table table-hover" style="margin-top:10px;">
@@ -216,6 +157,7 @@
 		<div style="text-align:right;">
 			<a href="${pageContext.request.contextPath}/board/boardMain" style="margin-right:20px;">목록으로</a>
 		</div>
+	</div>
 	</div>
 </body>
 </html>
