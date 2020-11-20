@@ -26,7 +26,7 @@
 						<li><a href="${pageContext.request.contextPath}/shop/shopMain">Shop - 쇼핑</a></li>
 						<li><a href="${pageContext.request.contextPath}/board/boardMain">Community - 게시판</a></li>
 						<li><a href="${pageContext.request.contextPath}/house/qna">Q&A - 질문</a></li>
-						<li><a href="${pageContext.request.contextPath}/user/login">Signin - 회원가입</a></li>
+						<li><a href="${pageContext.request.contextPath}/user/register">Signin - 회원가입</a></li>
 						<li><a href="${pageContext.request.contextPath}/user/login">Login - 로그인</a></li>
 					</ul>
 				</nav>
