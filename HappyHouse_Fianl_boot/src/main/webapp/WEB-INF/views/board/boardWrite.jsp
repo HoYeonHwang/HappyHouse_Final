@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Member 화면</title>
+	<title>게시판 작성</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 	.a {

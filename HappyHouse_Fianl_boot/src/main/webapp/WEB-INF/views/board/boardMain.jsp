@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HappyHouse-공지사항</title>
+<title>HappyHouse-게시판</title>
 	<link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <style>
