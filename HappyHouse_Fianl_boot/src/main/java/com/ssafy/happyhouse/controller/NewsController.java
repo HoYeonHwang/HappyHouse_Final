@@ -33,6 +33,7 @@ public class NewsController {
 			System.out.println("=======================================");
 		}
 		model.addAttribute("newsList",newslist);
+		model.addAttribute("listcount",newslist.size());
 		return "news/newsMain";
 	}
 	

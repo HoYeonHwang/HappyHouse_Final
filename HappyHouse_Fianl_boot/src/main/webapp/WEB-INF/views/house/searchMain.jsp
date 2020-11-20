@@ -199,7 +199,7 @@
 				<div class="inner">
 					<h1>당신의 집 뿐만아니라,</h1><br>
 					<h1>당신의 생활을 삽니다.</h1>
-					SSAFY - HappyHouse 프로젝트</p>
+					<p>SSAFY - HappyHouse 프로젝트</p>
 				</div>
 			</section>
 			<section id="one" class="wrapper style2">
