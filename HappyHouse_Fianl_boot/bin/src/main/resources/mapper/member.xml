@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.UserMapper">
+<!-- 	private int idx; -->
+<!-- 	private String userid; -->
+<!-- 	private String userpwd; -->
+	
+	<select id="login" parameterType="map" resultType="com.ssafy.happyhouse.model.MemberDTO">
+		select userid, userpwd, email
+		from happyhouse_member
+		where userid = #{userid} and userpwd = #{userpwd}
+	</select>
+	
+	<select id="userList" resultType="com.ssafy.happyhouse.model.MemberDTO">
+		select userid, userpwd, username, email, address, date_format(joindate, '%y.%m.%d') joindate
+		from happyhouse_member
+		order by joindate desc;
+	</select>
+	
+	<select id="userInfo" parameterType="String" resultType="com.ssafy.happyhouse.model.MemberDTO">
+		select userid, userpwd, username, email, address, date_format(joindate, '%y.%m.%d') joindate
+		from happyhouse_member
+		where userid = #{userid}
+	</select>
+	
+	<insert id="userRegister" parameterType="com.ssafy.happyhouse.model.MemberDTO">
+		insert into happyhouse_member (userid, userpwd, username, email, address, joindate)
+		values (#{userid}, #{userpwd}, #{username}, #{email}, #{address}, now())
+	</insert>
+	
+	<update id="userModify" parameterType="MemberDTO">
+		update happyhouse_member
+		set userpwd = #{userpwd}, email = #{email}, address = #{address}
+		where userid = #{userid}
+	</update>
+	
+	<delete id="userDelete" parameterType="String">
+		delete from happyhouse_member
+		where userid = #{userid}
+	</delete>
+	
+	<select id="findPassword" resultType="String">
+		select userpwd
+		from happyhouse_member
+		where userid = #{userid}
+	</select>
+</mapper>

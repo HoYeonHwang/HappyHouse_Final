@@ -19,8 +19,8 @@
 <!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="#">Home - 홈</a></li>
-					<li><a href="#">Project - 프로젝트</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Home - 홈</a></li>
+					<li><a href="${pageContext.request.contextPath}/projectInfo">Project - 프로젝트</a></li>
 					<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 방구하기</a></li>
 					<li><a href="#">News - 뉴스</a></li>
 					<li><a href="/sale.html">Shop - 쇼핑</a></li>

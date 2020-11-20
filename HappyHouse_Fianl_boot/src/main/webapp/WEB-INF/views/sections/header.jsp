@@ -13,17 +13,17 @@
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
 </head>
-<body>
+<body class="subpage">
 <!-- Header -->
-			<header id="header" class="alt">
+			<header id="header" >
 				<div class="logo"><a href="/">HappyHouse <span>by HwangHoYeon</span></a></div>
 				<a href="#menu" class="toggle"><span>Menu</span></a>
 			</header>
 <!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="#">Home - 홈</a></li>
-					<li><a href="#">Project - 프로젝트</a></li>
+					<li><a href="${pageContext.request.contextPath}/">Home - 홈</a></li>
+					<li><a href="${pageContext.request.contextPath}/projectInfo">Project - 프로젝트</a></li>
 					<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 방구하기</a></li>
 					<li><a href="#">News - 뉴스</a></li>
 					<li><a href="/sale.html">Shop - 쇼핑</a></li>
