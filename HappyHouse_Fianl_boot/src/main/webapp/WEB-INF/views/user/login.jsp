@@ -106,7 +106,7 @@
                         	<input type="submit" id="loginBtn" class="btn btn-warning" value="로그인">
                         </div>
                         <div style="text-align: right; margin-top:5px; display: block">
-                        	<a href="${pageContext.request.contextPath}/user/password"> 비밀번호를 잊으셨나요? </a>
+                        	<a href="${pageContext.request.contextPath}/user/findpassword"> 비밀번호를 잊으셨나요? </a>
                         </div>
                     </fieldset>
                 </form>
