@@ -7,8 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import com.ssafy.happyhouse.model.HouseInfoDTO;
 import com.ssafy.happyhouse.model.SidoGugunCodeDTO;
 import com.ssafy.happyhouse.model.VillaInfoDTO;
-@Mapper
 
+@Mapper
 public interface HouseMapper {
 	public List<SidoGugunCodeDTO> getSido() throws Exception;
 	public List<SidoGugunCodeDTO> getGugunInSido(String sido) throws Exception;

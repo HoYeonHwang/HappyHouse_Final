@@ -1,26 +1,27 @@
 package com.ssafy.happyhouse.model.service;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import org.apache.ibatis.session.SqlSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ssafy.happyhouse.model.ShopDTO;
+import com.ssafy.happyhouse.model.mapper.ShopMapper;
 
 @Service
 public class ShopServiceImpl implements ShopService {
-
+	@Autowired
+	private SqlSession sqlSession;
+	
 	@Override
 	public List<ShopDTO> getShop(){
-		
-		return null;
+		return sqlSession.getMapper(ShopMapper.class).getShop();
 	}
 
-
+	@Override
+	public List<ShopDTO> searchShop(String search) {
+		return sqlSession.getMapper(ShopMapper.class).searchShop(search);
+	}
 }

@@ -7,8 +7,8 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.ssafy.happyhouse.model.MemberDTO;
-@Mapper
 
+@Mapper
 public interface UserMapper {
 
 	public MemberDTO login(Map<String, String> map) throws SQLException;

@@ -6,8 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.ssafy.happyhouse.model.QnaCommentDto;
 import com.ssafy.happyhouse.model.QnaDto;
-@Mapper
 
+@Mapper
 public interface QnaMapper {
 	public List<QnaDto> searchAll();
 	public int insert(QnaDto dto);

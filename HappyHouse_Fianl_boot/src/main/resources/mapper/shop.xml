@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.model.mapper.ShopMapper">
+
+<select id="getShop" resultType="com.ssafy.happyhouse.model.ShopDTO">
+		SELECT * 
+		FROM house_shop
+	</select>
+	<select id="searchShop" parameterType="String" resultType="com.ssafy.happyhouse.model.ShopDTO">
+		SELECT * 
+		FROM house_shop
+		WHERE #{search}
+	</select>
+</mapper>
