@@ -7,17 +7,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Happy House</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script
-            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="text/javascript">
+    
 	$(document).ready(function() {
 		$("#updateBtn").click(function() {
 			$("#userpwd").attr('disabled', false);
@@ -43,46 +35,8 @@
 			
 	});
     </script>
-
-    <style>
-        html, body {
-            height: 100%;
-        }
-
-        .wrapper {
-            height: 85%;
-        }
-
-        /* nav start */
-        .btn-primary {
-            margin-left: 20px;
-        }
-
-        h2 {
-            color: white;
-            font-weight: bold;
-        }
-
-        h1 {
-            font-size: 50px;
-            color: black;
-        }
-        
-        h3 {
-        	color: black;
-            font-weight: bold;
-        }
-
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .error {
-        	color: red;
-        }
+        <style>
+      
     </style>
 </head>
 <body>

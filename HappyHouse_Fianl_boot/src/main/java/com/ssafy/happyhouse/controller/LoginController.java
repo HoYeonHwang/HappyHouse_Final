@@ -65,7 +65,7 @@ public class LoginController extends HttpServlet {
 			model.addAttribute("msg", "로그인 중 문제가 발생했습니다.");
 			return "error/error";
 		}
-		return "index";
+		return "redirect:/";
 	}
 	
 	// 회원가입 -> GET
@@ -110,7 +110,7 @@ public class LoginController extends HttpServlet {
 		userService.userDelete(userid);
 		session.invalidate();
 		model.addAttribute("msg", "회원탈퇴가 완료되었습니다.");
-		return "index";
+		return "redirect:/";
 	}
 	
 	// 내정보 수정 -> POST
@@ -120,7 +120,7 @@ public class LoginController extends HttpServlet {
 		System.out.println(userService.userModify(dto));
 		model.addAttribute("myinfo", dto);
 		
-		return "index";
+		return "redirect:/";
 	}
 	
 	// 비밀번호 찾기 -> POST

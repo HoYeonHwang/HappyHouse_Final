@@ -87,7 +87,7 @@
                 <c:if test="${not empty errorMsg}">
                 	<p class="error">${errorMsg}</p>
                 </c:if>
-                <form action="${pageContext.request.contextPath}/user/login.do" method="post">
+                <form action="${pageContext.request.contextPath}/user/login" method="post">
                     <fieldset>
                         <div class="form-group" align="left">
                             <label for=ID style="display: block">ID:</label>
@@ -106,7 +106,7 @@
                         	<input type="submit" id="loginBtn" class="btn btn-warning" value="로그인">
                         </div>
                         <div style="text-align: right; margin-top:5px; display: block">
-                        	<a href="${pageContext.request.contextPath}/user/password.do"> 비밀번호를 잊으셨나요? </a>
+                        	<a href="${pageContext.request.contextPath}/user/password"> 비밀번호를 잊으셨나요? </a>
                         </div>
                     </fieldset>
                 </form>
