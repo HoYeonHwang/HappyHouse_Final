@@ -11,4 +11,13 @@
 		FROM house_shop
 		WHERE productHeader LIKE CONCAT('%', #{search}, '%')
 	</select>
+	<insert id="insertShop" parameterType="com.ssafy.happyhouse.model.ShopDTO">
+		INSERT INTO HOUSE_SHOP (productHeader, productPrice, productRate, productContent, productReview,productimg,productBook,productTime,productNick,productPhone)
+		VALUES(#{productHeader},#{productPrice},#{productRate},#{productContent},0,#{productimg},0,NOW(),#{productNick},#{productPhone})
+	</insert>
+	<update id="updateReadcnt" parameterType="String">
+		UPDATE HOUSE_SHOP 
+		SET productReview = productReview+1 
+		WHERE productId=#{productId}
+	</update>
 </mapper>

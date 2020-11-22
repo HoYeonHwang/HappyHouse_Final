@@ -24,4 +24,15 @@ public class ShopServiceImpl implements ShopService {
 	public List<ShopDTO> searchShop(String search) {
 		return sqlSession.getMapper(ShopMapper.class).searchShop(search);
 	}
+
+	@Override
+	public int insertShop(ShopDTO dto) {
+		return sqlSession.getMapper(ShopMapper.class).insertShop(dto);
+	}
+
+	@Override
+	public int updateReadcnt(String productId) {
+		return sqlSession.getMapper(ShopMapper.class).updateReadcnt(productId);
+	}
+	
 }
