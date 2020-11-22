@@ -11,7 +11,9 @@
 <link rel="stylesheet" href="../assets/css/skel.css" />
 <link rel="stylesheet" href="../assets/css/style.css" />
 <link rel="stylesheet" href="../assets/css/style-wide.css" />
+
 </head>
+
 <style>
 .a {
 	background-image: url( "../images/6.jpg" );

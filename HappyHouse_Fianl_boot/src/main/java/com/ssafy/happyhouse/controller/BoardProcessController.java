@@ -24,12 +24,16 @@ public class BoardProcessController {
 	private BoardService boardService;
 	
 	@RequestMapping(value = "/boardProcess", method = RequestMethod.POST)
-	public String insertBoard(@RequestParam("btitle") String btitle,@RequestParam("bcontent") String bcontent,HttpSession session) {
+	public String insertBoard(@RequestBody HouseNoticeDto dto,HttpSession session) {
 		MemberDTO userInfo = (MemberDTO) session.getAttribute("userinfo");
 		String bwriter = userInfo.getUserid();
-		HouseNoticeDto dto = new HouseNoticeDto(btitle, bwriter, bcontent,0);
-		boardService.insertBoard(dto);
-		return "board/boardMain";
+		System.out.println(dto.getBtitle()+dto.getBcontent());
+		HouseNoticeDto insertdto = new HouseNoticeDto(dto.getBtitle(), bwriter, dto.getBcontent(),0);
+		int result =boardService.insertBoard(insertdto);
+		if(result ==1) {
+			return "success";
+		}
+		return "error";
 	}
 	@RequestMapping(value = "/boardProcess", method = RequestMethod.PUT, headers = { "Content-type=application/json" })
 	public String updateBoard(@RequestBody HouseNoticeDto dto) {

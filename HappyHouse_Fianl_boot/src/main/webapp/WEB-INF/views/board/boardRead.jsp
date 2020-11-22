@@ -7,6 +7,15 @@
 <meta charset="UTF-8">
 <title>글 읽기</title>
 <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#confirmBtn").click(function(){
@@ -61,9 +70,23 @@
 </style>
 </head>
 <body>
-	<div class="a">
-		<div class="container">
-			<header id="index_header" class="jumbotron text-center mb-1"></header>
+<section id="one" class="wrapper style2">
+		<div class="inner">
+			<div class="box">
+				<div class="image fit">
+					<img src="../images/board.png" alt="" />
+				</div>
+				<div class="content">
+					<header class="align-center">
+						<h2>Happy House 게시판</h2>
+					</header>
+
+					<div style="text-align: right;">
+						<a href="${pageContext.request.contextPath}/board/boardMain" style="margin-right: 1px;">
+							<button class="button">게시판</button>
+						</a>
+					</div>
+
 			<table border="1" class="table table-hover" style="margin-top: 10px;">
 				<tr id="notice_title">
 					<th colspan="5" style="color: white;">공지사항</th>
@@ -156,6 +179,8 @@
 				<a href="${pageContext.request.contextPath}/board/boardMain" style="margin-right: 20px;">목록으로</a>
 			</div>
 		</div>
+		</div>
 	</div>
+	</section>
 </body>
 </html>

@@ -43,8 +43,8 @@
 				<li><a href="${pageContext.request.contextPath}/">Home - 홈</a></li>
 				<li><a href="${pageContext.request.contextPath}/projectInfo">Project - 프로젝트</a></li>
 				<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 방구하기</a></li>
-				<li><a href="#">News - 뉴스</a></li>
-				<li><a href="/sale.html">Shop - 쇼핑</a></li>
+				<li><a href="${pageContext.request.contextPath}/news/newsMain">News - 뉴스</a></li>
+				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Shop - 쇼핑</a></li>
 				<li><a href="${pageContext.request.contextPath}/board/boardMain">Community - 게시판</a></li>
 				<li><a href="${pageContext.request.contextPath}/house/qna">Q&A - 질문</a></li>
 				<c:if test="${logininfo eq 'admin'}">
@@ -151,7 +151,7 @@
 					</header>
 					<p>집과 동네 다양한 소식들을 접할 수 있습니다.</p>
 					<ul class="actions">
-						<li><a href="#" class="button alt">Learn More</a></li>
+						<li><a href="${pageContext.request.contextPath}/board/boardMain" class="button alt">Learn More</a></li>
 					</ul>
 				</div>
 				<div>
