@@ -56,7 +56,7 @@
 					<p>같은 동네의 주민들이 팔고있는 상품들을 소개시켜 드립니다.</p> <br><br>
 					<form action="${pageContext.request.contextPath}/shop/shopSearch" method = "post">
 					<input type="text" id="search" name="search"> <br>
-					<input type="button" id="SearchBtn" value="키워드">
+					<input type="submit" id="SearchBtn" value="키워드">
 					</form>
 				</div>
 			</section>

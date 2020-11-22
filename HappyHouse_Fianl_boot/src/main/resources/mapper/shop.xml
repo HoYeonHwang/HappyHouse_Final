@@ -9,6 +9,6 @@
 	<select id="searchShop" parameterType="String" resultType="com.ssafy.happyhouse.model.ShopDTO">
 		SELECT * 
 		FROM house_shop
-		WHERE #{search}
+		WHERE productHeader LIKE CONCAT('%', #{search}, '%')
 	</select>
 </mapper>
