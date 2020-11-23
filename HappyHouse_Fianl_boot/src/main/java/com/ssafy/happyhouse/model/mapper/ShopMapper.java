@@ -12,4 +12,5 @@ public interface ShopMapper {
 	public List<ShopDTO> searchShop(String search);
 	public int insertShop(ShopDTO dto);
 	public int updateReadcnt(String productId);
+	public ShopDTO searchShopOne(String search);
 }
