@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="../assets/css/style.css" />
 <link rel="stylesheet" href="../assets/css/style-wide.css" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -22,6 +24,50 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+div.box p{
+font-family: 'Gugi', cursive;
+}
+td{
+font-family: 'Gugi', cursive;
+	font-size:20px;
+}
+p.h{
+	font-size:50px;
+}
+p.p{
+font-weight:300px;
+	font-size:15px;
+	text-decoration:line-through
+}
+p.r{
+font-weight:500px;
+	font-size:30px;
+}p.R{
+font-weight:700px;
+	font-size:15px;
+}
+.blinking{
+	-webkit-animation:blink 1.5s ease-in-out infinite alternate;
+    -moz-animation:blink 1.5s ease-in-out infinite alternate;
+    animation:blink 1.5s ease-in-out infinite alternate;
+    font-weight:700px;
+	font-size:30px;
+}
+@-webkit-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@-moz-keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes blink{
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+
+출처: https://pikabu.tistory.com/77 [피카부]
 </style>
 <script type="text/javascript">
 	 $(document).ready(function(){
@@ -77,6 +123,7 @@
 	 		return false;
 	 	}
 	 	});
+	 	
 	 });//ready
 </script>
 
@@ -99,7 +146,7 @@
 		</section>
 		<!-- Extra -->
 		<div style="text-align: right;">
-			<a href="${pageContext.request.contextPath}/shop/shopWrite" style="margin-right: 1px;">
+			<a href="${pageContext.request.contextPath}/shop/shopWrite" style="margin-right: 20px;">
 				<button class="button">글작성</button>
 			</a>
 		</div>
@@ -114,13 +161,18 @@
 									<img src="../images/${shop.porductImg}" alt="">
 								</a>
 								<div class="box">
-									<p>${shop.productHeader}
-										<br>
-									</p>
-									<p>${shop.productPrice}
-										-> ${shop.productRate}<br> <br> ${shop.productReview} <br>
-									</p>
+									<p class ="h">${shop.productHeader}</p>
+									<p class ="p">${shop.productPrice}원</p>
+									<p class ="r">${shop.productRate}원</p>
+									<c:if test="${shop.productBook==1}">
+									<p class = "blinking" style ="color: red;">예약중</p>
+									</c:if>
+									<c:if test="${shop.productBook==0}">
+									<p class = "blinking" style ="color: MediumSeaGreen;">판매중</p>
+									</c:if>
+									<p class ="R">조회수 : ${shop.productReview} <br></p>
 									<button class="ReadMore" data-toggle="modal" data-target="#ReadMoreModal" value="${shop.productId}">Read More</button>
+									<a href="${pageContext.request.contextPath}/shop/chat">chat</a>
 								</div>
 							</section>
 						</c:forEach>

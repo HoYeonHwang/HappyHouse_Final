@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.ssafy.happyhouse.model.MyFileDto;
 import com.ssafy.happyhouse.model.ShopDTO;
@@ -62,7 +63,12 @@ public class ShopController {
 		model.addAttribute("shoplist",shopList);
 		return "shop/shopMain";
 	}
-
+	@RequestMapping("/chat")
+	public ModelAndView chat() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("shop/shopChat");
+		return mv;
+	}
 	@RequestMapping(value = "/shopWrite", method = RequestMethod.GET)
 	public String Shopwrite(Model model) {
 		return "shop/shopWrite";
