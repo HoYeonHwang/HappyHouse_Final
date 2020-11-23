@@ -5,24 +5,25 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.gson.Gson;
 import com.ssafy.happyhouse.model.CommercialDto;
-import com.ssafy.happyhouse.model.CommercialDto.Item;
 
 @RestController
 public class CommercialController {
 	
 	
 	@GetMapping("/apitest")
-	public String callApiHttp() {
+	public List<CommercialDto> callApiHttp() {
 		String result = "";
-		CommercialDto dto = null;
-		URLConnection urlConn;
-//		StringBuffer result = new StringBuffer();
+		List<CommercialDto> list_dto = null;
 		try {
 			String urlstr = "http://apis.data.go.kr/B553077/api/open/sdsc/baroApi?" +
 						 "resId=store&" +
@@ -32,29 +33,31 @@ public class CommercialController {
 						 "key=11&" +
 						 "ServiceKey=VSW43F1xNExQZJXgbn%2FVYvfP2q%2BOJnNpyD7fvPkXPnikPRwAqFkl6epB2WWuFbZVhV6FkR65zsu33JuPrgR2Sg%3D%3D";
 			URL url = new URL(urlstr);
-			urlConn = url.openConnection();
-			HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
-			urlconnection.setRequestMethod("GET");
-			BufferedReader br = new BufferedReader(new InputStreamReader(urlConn.getInputStream()));
-			
+			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 			String returnLine;
-//			result.append("<xmp>");
 			while((returnLine = br.readLine()) != null) {
 				result += returnLine;
 			}
-			result = result.trim();
-            System.out.println(result);
+			list_dto = new ArrayList<CommercialDto>();
+			JSONParser parser = new JSONParser();
+			JSONObject jsonObject = (JSONObject) parser.parse(result);
+			JSONObject body = (JSONObject) jsonObject.get("body");
+			JSONArray items = (JSONArray) body.get("items");
+			for(int i=0; i<items.size(); i++) {
+				JSONObject commercialInfo = (JSONObject) items.get(i);
+				String bizesId = (String) commercialInfo.get("bizesId");
+				String bizesNm = (String) commercialInfo.get("bizesNm");
+				Double lon = (Double) commercialInfo.get("lon");
+				Double lat = (Double) commercialInfo.get("lat");
+				list_dto.add(new CommercialDto(bizesId, bizesNm, lon, lat));
+				System.out.println(list_dto.get(i));
+			}
             br.close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		dto = new Gson().fromJson(result, CommercialDto.class);
-		System.out.println(dto.response.header.resultCode);
-//        for (Item item : dto.response.body.items.item) {
-//        	System.out.println(item);
-//		}
 
-		return result + "</xmp>";
+		return list_dto;
 	}
 }

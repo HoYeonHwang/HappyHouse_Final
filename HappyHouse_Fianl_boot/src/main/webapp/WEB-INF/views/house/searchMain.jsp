@@ -104,6 +104,30 @@
 								}// error
 						}) 
 					});//change
+					$("#commercialCheck").change(function() {
+						if($("#commercialCheck").is(":checked")){
+							$.ajax({
+								url:'${pageContext.request.contextPath}/apitest',
+								method : 'GET',
+								datatype : 'text',
+								data:{'dong':$("#dong").val()},
+								success:function(result){
+									$.each(result, function(index, vo){
+										let tmplat = vo.lat;
+										let tmplng = vo.lon;
+										let title = vo.bizesNm;
+										addMarker(tmplat, tmplng, title);
+									});
+								},//success
+								error:function(request,status,error){
+									console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+								}// error
+							}) 
+						}
+						else{
+							initMap();
+						}
+					});//change
 				});//ready
 				
 				$(document).ready(function(){
@@ -286,8 +310,12 @@
 			<tbody id="searchResult">
 			</tbody>
 		</table>
-
-		<div id="map" style="width: 100%; height: 500px; margin: auto;"></div>
+		<div>
+			<label><input type="checkbox" id="commercialCheck" value="주변상가">주변상가</label>
+		</div>
+		<div id="map" style="width: 100%; height: 500px; margin: auto;">
+			
+		</div>
 		<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLCDvitEVxXP248HqlNI9UwV7hnZH_afQ&callback=initMap"></script>
 		<script>
