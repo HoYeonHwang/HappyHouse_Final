@@ -81,7 +81,7 @@ public class QnaProcessController {
 	@RequestMapping(value = "/addcomment", method = RequestMethod.POST)
 	public String addComment(@RequestBody QnaCommentDto dto, HttpSession session) {
 		MemberDTO userInfo = (MemberDTO) session.getAttribute("userinfo");
-		dto.setQcwriter(userInfo.getUserid());
+		dto.setQcwriter("admin");
 		int result = qnaService.addComment(dto);
 		if(result ==1) {
 			return "success";

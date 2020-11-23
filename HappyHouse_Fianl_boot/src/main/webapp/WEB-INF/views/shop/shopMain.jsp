@@ -132,9 +132,9 @@ font-weight:700px;
 		<!--  banner -->
 		<section id="banner">
 			<div class="inner">
-				<h1>자본주의에 살고있는 우리,</h1>
+				<h1>건전한 소비야 말로,</h1>
 				<br>
-				<h1>건전한 소비야 말로 진정한 힐링이 아닐까요?</h1>
+				<h1>진정한 힐링이 아닐까요?</h1>
 				<p>HappyHouse 마켓은 다양한 상품들을 선보이며 고객님들의 FLEX를 응원합니다.</p>
 				<br> <br>
 				<form action="${pageContext.request.contextPath}/shop/shopSearch" method="post">

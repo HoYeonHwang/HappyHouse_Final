@@ -19,7 +19,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 				.addPathPatterns("/shop/*")
 				.addPathPatterns("/board/*")
 				.addPathPatterns("/news/*")
-				.addPathPatterns("/qna/*")
+//				.addPathPatterns("/qna/*")
 				.excludePathPatterns("/user/*");
 	}
 }

@@ -30,7 +30,6 @@
 				<li><a href="${pageContext.request.contextPath}/news/newsMain">News - 뉴스</a></li>
 				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Market - 마켓</a></li>
 				<li><a href="${pageContext.request.contextPath}/board/boardMain">Community - 게시판</a></li>
-				<li><a href="${pageContext.request.contextPath}/house/qna">Q&A - 질문</a></li>
 				<li><a href="${pageContext.request.contextPath}/user/register">Signin - 회원가입</a></li>
 				<li><a href="${pageContext.request.contextPath}/user/login">Login - 로그인</a></li>
 			</ul>
@@ -46,8 +45,8 @@
 				<li><a href="${pageContext.request.contextPath}/news/newsMain">News - 뉴스</a></li>
 				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Market - 마켓</a></li>
 				<li><a href="${pageContext.request.contextPath}/board/boardMain">Community - 게시판</a></li>
-				<li><a href="${pageContext.request.contextPath}/house/qna">Q&A - 질문</a></li>
 				<c:if test="${logininfo eq 'admin'}">
+				<li><a href="${pageContext.request.contextPath}/house/qna">Q&A - 질문</a></li>
 					<li><a href="${pageContext.request.contextPath}/admin/list">관리자</a></li>
 				</c:if>
 				<li><a href="${pageContext.request.contextPath}/user/info?userid=${userinfo.userid}">내정보</a></li>
