@@ -156,11 +156,11 @@
 				</div>
 				<div>
 					<header>
-						<h3>맛집 추천</h3>
+						<h3>마켓</h3>
 					</header>
-					<p>동네의 다양한 맛집들을 저희가 대신 추천해드립니다.</p>
+					<p>HappyHouse의 고객들의 Flex를 위한 다양한 상품을 공유해 보세요</p>
 					<ul class="actions">
-						<li><a href="#" class="button alt">Learn More</a></li>
+						<li><a href="${pageContext.request.contextPath}/shop/shopMain" class="button alt">Learn More</a></li>
 					</ul>
 				</div>
 			</div>

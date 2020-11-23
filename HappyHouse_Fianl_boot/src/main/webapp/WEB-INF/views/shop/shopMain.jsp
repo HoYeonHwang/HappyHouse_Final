@@ -132,10 +132,10 @@ font-weight:700px;
 		<!--  banner -->
 		<section id="banner">
 			<div class="inner">
-				<h1>이사에 도움이 되는</h1>
+				<h1>자본주의에 살고있는 우리,</h1>
 				<br>
-				<h1>상품들을 소개해드릴게요</h1>
-				<p>같은 동네의 주민들이 팔고있는 상품들을 소개시켜 드립니다.</p>
+				<h1>건전한 소비야 말로 진정한 힐링이 아닐까요?</h1>
+				<p>HappyHouse 마켓은 다양한 상품들을 선보이며 고객님들의 FLEX를 응원합니다.</p>
 				<br> <br>
 				<form action="${pageContext.request.contextPath}/shop/shopSearch" method="post">
 					<input type="text" id="search" name="search">
