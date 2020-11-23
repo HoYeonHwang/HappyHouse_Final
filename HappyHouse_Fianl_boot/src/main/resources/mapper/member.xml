@@ -8,7 +8,7 @@
 <!-- 	private String userpwd; -->
 	
 	<select id="login" parameterType="map" resultType="com.ssafy.happyhouse.model.MemberDTO">
-		select userid, userpwd, email
+		select userid, userpwd, username, email
 		from happyhouse_member
 		where userid = #{userid} and userpwd = #{userpwd}
 	</select>

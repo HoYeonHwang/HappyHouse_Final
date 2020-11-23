@@ -85,6 +85,11 @@ h3 {
 					<div>
 						<span class="icon fa-instagram"></span>
 						<h3>로그인</h3>
+						<c:if test="${not empty msg}">
+							<script>
+								alert("${msg}");
+							</script>
+						</c:if>
 						<form action="${pageContext.request.contextPath}/user/login" method="post">
 							<fieldset>
 								<div class="form-group" align="left">

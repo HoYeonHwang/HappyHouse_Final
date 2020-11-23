@@ -44,7 +44,7 @@ public class LoginController extends HttpServlet {
 			MemberDTO memberDto = userService.login(map);
 			if(memberDto != null) {
 				session.setAttribute("userinfo", memberDto);
-				
+				System.out.println(memberDto.getUsername());
 				Cookie cookie = new Cookie("ssafy_id", memberDto.getUserid());
 				cookie.setPath("/");
 				if("saveok".equals(map.get("idsave"))) {
@@ -59,6 +59,7 @@ public class LoginController extends HttpServlet {
 				}
 			} else {
 				model.addAttribute("msg", "아이디 또는 비밀번호 확인 후 로그인해 주세요.");
+				return "user/login";
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
