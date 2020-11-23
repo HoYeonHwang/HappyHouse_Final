@@ -19,8 +19,8 @@
 		.container h1{
 			text-align: left;
 			padding: 5px 5px 5px 15px;
-			color: #FFBB00;
-			border-left: 3px solid #FFBB00;
+			color: #21c8b0;
+			border-left: 3px solid #21c8b0;
 			margin-bottom: 20px;
 		}
 		.chating{
@@ -91,7 +91,7 @@
 </script>
 <body>
 	<div id="container" class="container">
-		<h1>채팅</h1>
+		<h1>HappyHouse 마켓 채팅</h1>
 		<div id="chating" class="chating">
 		</div>
 		

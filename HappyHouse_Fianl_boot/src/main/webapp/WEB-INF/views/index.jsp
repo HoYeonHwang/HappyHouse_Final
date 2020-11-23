@@ -28,7 +28,7 @@
 				<li><a href="${pageContext.request.contextPath}/projectInfo">Project - 프로젝트</a></li>
 				<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 방구하기</a></li>
 				<li><a href="${pageContext.request.contextPath}/news/newsMain">News - 뉴스</a></li>
-				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Shop - 쇼핑</a></li>
+				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Market - 마켓</a></li>
 				<li><a href="${pageContext.request.contextPath}/board/boardMain">Community - 게시판</a></li>
 				<li><a href="${pageContext.request.contextPath}/house/qna">Q&A - 질문</a></li>
 				<li><a href="${pageContext.request.contextPath}/user/register">Signin - 회원가입</a></li>
@@ -44,7 +44,7 @@
 				<li><a href="${pageContext.request.contextPath}/projectInfo">Project - 프로젝트</a></li>
 				<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 방구하기</a></li>
 				<li><a href="${pageContext.request.contextPath}/news/newsMain">News - 뉴스</a></li>
-				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Shop - 쇼핑</a></li>
+				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Market - 마켓</a></li>
 				<li><a href="${pageContext.request.contextPath}/board/boardMain">Community - 게시판</a></li>
 				<li><a href="${pageContext.request.contextPath}/house/qna">Q&A - 질문</a></li>
 				<c:if test="${logininfo eq 'admin'}">

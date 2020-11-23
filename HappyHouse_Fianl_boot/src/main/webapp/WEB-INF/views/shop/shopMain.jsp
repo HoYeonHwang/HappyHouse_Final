@@ -168,11 +168,11 @@ font-weight:700px;
 									<p class = "blinking" style ="color: red;">예약중</p>
 									</c:if>
 									<c:if test="${shop.productBook==0}">
-									<p class = "blinking" style ="color: MediumSeaGreen;">판매중</p>
+									<p class = "blinking" style ="color:#21c8b0;">판매중</p>
 									</c:if>
 									<p class ="R">조회수 : ${shop.productReview} <br></p>
 									<button class="ReadMore" data-toggle="modal" data-target="#ReadMoreModal" value="${shop.productId}">Read More</button>
-									<a href="${pageContext.request.contextPath}/shop/chat">chat</a>
+									<button><a href="${pageContext.request.contextPath}/shop/chat">chat</a></button>
 								</div>
 							</section>
 						</c:forEach>
