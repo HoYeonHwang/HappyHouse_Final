@@ -17,4 +17,5 @@ public interface HouseMapper {
 	public List<HouseInfoDTO> getAllsearch(String search) throws Exception;
 	public List<HouseInfoDTO> getyearSearch(String search) throws Exception;
 	public List<VillaInfoDTO> getvillaSearch(String search) throws Exception;
+	public String getDongCode(String dong) throws Exception;
 }

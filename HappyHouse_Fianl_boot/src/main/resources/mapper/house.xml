@@ -43,4 +43,10 @@
 			WHERE dong LIKE #{search} OR villaName LIKE #{search} 
 			ORDER BY villaName
 		</select>
+		<select id="getDongCode" parameterType="String" resultType="String">
+			SELECT code
+			FROM houseinfo
+			WHERE dong LIKE #{dong}
+			ORDER BY code limit 1
+		</select>
 </mapper>

@@ -310,9 +310,11 @@
 			<tbody id="searchResult">
 			</tbody>
 		</table>
-		<div>
-			<label><input type="checkbox" id="commercialCheck" value="주변상가">주변상가</label>
-		</div>
+		<section id="three" class="wrapper style2">
+			<div class="inner">
+				<label><input class="custom-control-input" type="checkbox" id="commercialCheck" value="주변상가">주변상가</label>
+			</div>
+		</section>
 		<div id="map" style="width: 100%; height: 500px; margin: auto;">
 			
 		</div>

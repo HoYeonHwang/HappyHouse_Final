@@ -11,27 +11,42 @@ import java.util.List;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.happyhouse.model.CommercialDto;
+import com.ssafy.happyhouse.model.service.HouseService;
 
 @RestController
 public class CommercialController {
-	
+	@Autowired
+	private HouseService houseService;
 	
 	@GetMapping("/apitest")
-	public List<CommercialDto> callApiHttp() {
+	@ResponseBody
+	public List<CommercialDto> callApiHttp(@RequestParam("dong") String dong) {
+		System.out.println(dong);
+		String dongcode = null;
+		try {
+			dongcode = houseService.getDongCode(dong);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 		String result = "";
 		List<CommercialDto> list_dto = null;
+		System.out.println(dongcode);
 		try {
 			String urlstr = "http://apis.data.go.kr/B553077/api/open/sdsc/baroApi?" +
 						 "resId=store&" +
 						 "catId=dong&" +
-						 "divId=ctprvnCd&" +
+						 "divId=signguCd&" +
 						 "type=json&" +
-						 "key=11&" +
+						 "key=" + dongcode+"&"+
 						 "ServiceKey=VSW43F1xNExQZJXgbn%2FVYvfP2q%2BOJnNpyD7fvPkXPnikPRwAqFkl6epB2WWuFbZVhV6FkR65zsu33JuPrgR2Sg%3D%3D";
+			System.out.println(urlstr);
 			URL url = new URL(urlstr);
 			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 			String returnLine;

@@ -44,4 +44,8 @@ public class HouseServiceImpl implements HouseService{
 	public List<HouseInfoDTO> getAptInDong(String dong) throws Exception{
 		return sqlSession.getMapper(HouseMapper.class).getAptInDong(dong);
 	}
+	@Override
+	public String getDongCode(String dong) throws Exception {
+		return sqlSession.getMapper(HouseMapper.class).getDongCode(dong);
+	}
 }
