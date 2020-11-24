@@ -4527,3 +4527,109 @@
 			}
 
 		}
+		
+	
+		/* tHeader */
+
+	#theader {
+		-moz-transition: background 1s ease-in-out, height 0.2s ease-in-out;
+		-webkit-transition: background 1s ease-in-out, height 0.2s ease-in-out;
+		-ms-transition: background 1s ease-in-out, height 0.2s ease-in-out;
+		transition: background 1s ease-in-out, height 0.2s ease-in-out;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		display: -ms-flexbox;
+		-ms-flex-align: center;
+		-ms-flex-pack: center;
+		background: rgba(254, 254, 254, 0.85);
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 10001;
+	}
+
+		#theader .tinner {
+			-moz-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-webkit-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			-ms-transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-moz-justify-content: center;
+			-webkit-justify-content: center;
+			-ms-justify-content: center;
+			justify-content: center;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			display: -ms-flexbox;
+			-ms-flex-align: center;
+			-ms-flex-pack: center;
+			background: #b1aebd;
+			border-radius: 100%;
+			width: 35em;
+			height: 35em;
+			padding: 4em;
+			text-align: center;
+			box-shadow: 0 0 0 1em #FFF;
+			cursor: default;
+		}
+
+			#theader .tinner .tcontent {
+				-moz-transition: opacity 1s ease-in-out;
+				-webkit-transition: opacity 1s ease-in-out;
+				-ms-transition: opacity 1s ease-in-out;
+				transition: opacity 1s ease-in-out;
+				opacity: 1;
+			}
+
+				#theader .tinner .tcontent h1 {
+					font-size: 4em;
+					font-family: 'Pattaya', sans-serif;
+					margin: 0 0 .25em 0;
+					color: #fff;
+				}
+
+				#theader .tinner .tcontent h2 {
+					font-size: 1.5em;
+					color: #fff;
+					margin: 0 0 1em 0;
+				}
+
+			#theader .tinner .tbutton {
+				-moz-transition: background 1s ease-in-out;
+				-webkit-transition: background 1s ease-in-out;
+				-ms-transition: background 1s ease-in-out;
+				transition: background 1s ease-in-out;
+				margin: 0;
+				border-radius: 30px;
+			}
+
+				#theader .tinner .tbutton.thidden {
+					display: none;
+					cursor: pointer;
+				}
+
+			#theader .tinner.thidden {
+				display: none;
+			}
+	
+		

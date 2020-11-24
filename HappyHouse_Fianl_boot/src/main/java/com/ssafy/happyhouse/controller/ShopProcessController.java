@@ -21,8 +21,6 @@ import com.ssafy.happyhouse.model.service.ShopService;
 
 @RestController
 @RequestMapping("/shop") 
-
-
 public class ShopProcessController {
 	@Autowired
 	private ShopService shopservice;

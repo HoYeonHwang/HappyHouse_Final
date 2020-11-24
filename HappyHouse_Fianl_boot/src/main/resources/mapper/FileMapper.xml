@@ -10,9 +10,13 @@
 	<select id="selectOne" parameterType="int" resultType="MyFileDto">
 	SELECT * FROM FILE_TB WHERE FNO=#{fno}
 	</select>
-	
-	<delete id="">
-	DELETE FROM TABLE_NAME
-	WHERE bno=#{bno}
-	</delete>
+
+	<insert id="tinsertFile" parameterType="MyFileDto">
+	INSERT INTO FILE_TRIP(FILENAME,ORIGIN)
+	VALUES (#{filename},#{origin})
+	</insert>
+	<select id="tselectAll" resultType="MyFileDto">SELECT * FROM FILE_TRIP </select>
+	<select id="tselectOne" parameterType="int" resultType="MyFileDto">
+	SELECT * FROM FILE_TRIP WHERE FNO=#{fno}
+	</select>
 </mapper>

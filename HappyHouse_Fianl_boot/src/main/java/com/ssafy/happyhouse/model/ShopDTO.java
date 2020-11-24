@@ -1,7 +1,5 @@
 package com.ssafy.happyhouse.model;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class ShopDTO {
 	private int productId;// id
 	private String productHeader; // 헤더

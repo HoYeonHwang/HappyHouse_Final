@@ -23,4 +23,13 @@ public class FileServiceImpl{
 	public List<MyFileDto> selectAll() {
 		return sqlSession.getMapper(FileMapper.class).selectAll();
 	}
+	public int tsaveFile(MyFileDto dto) {
+		return sqlSession.getMapper(FileMapper.class).tinsertFile(dto);
+	}
+	public MyFileDto tsearchFile(int fno) {
+		return sqlSession.getMapper(FileMapper.class).tselectOne(fno);
+	}
+	public List<MyFileDto> tselectAll() {
+		return sqlSession.getMapper(FileMapper.class).tselectAll();
+	}
 }

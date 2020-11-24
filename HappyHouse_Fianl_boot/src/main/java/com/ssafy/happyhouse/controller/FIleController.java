@@ -22,13 +22,12 @@ import com.ssafy.happyhouse.model.MyFileDto;
 import com.ssafy.happyhouse.model.service.FileServiceImpl;
 
 @RestController
-@RequestMapping("/shop")
 public class FIleController {
 	
 	@Autowired
 	private FileServiceImpl fservice;
 	
-	@PostMapping("/uploadFile")
+	@PostMapping("/shop/uploadFile")
 	public String upload(MyFileDto dto) {
 		System.out.println("파일업로드 시작");
 		String path = "C:\\Users\\HwangHoYeon\\git\\happyhouse_final\\HappyHouse_Fianl_boot\\src\\main\\resources\\static\\images\\";
@@ -57,27 +56,34 @@ public class FIleController {
 		}
 		return "error";
 	}
-	
-	@GetMapping("/download.hhy")
-	public void download(int fno, HttpServletResponse response) {
-		MyFileDto dto = fservice.searchFile(fno);
-		
-		response.setContentType("application/octet-stream; charset=UTF-8"); // 이번 응답은 html이 아니라 파일이다.
-		response.setHeader("Content-Disposition", "attachment; filename=\""+dto.getFilename()+"\"");
-		
+	@PostMapping("/trip/uploadFile")
+	public String uploadtrip(MyFileDto dto) {
+		System.out.println("파일업로드 시작");
+		String path = "C:\\Users\\HwangHoYeon\\git\\happyhouse_final\\HappyHouse_Fianl_boot\\src\\main\\resources\\static\\images\\trip\\";
+		System.out.println(dto.getUploadFile());
+		File dir = new File(path);
+		if(!dir.exists()) // 파일 저장할 폴더가 없으면
+			dir.mkdir(); // 폴더를 생성해라
+		int filename= new Random().nextInt(100000000);
+		String savedName = path+filename;
+		String fileName=Integer.toString(filename);
+		File saveFile = new File(savedName); // 사용자가 업로드한 파일을 저장하기 위한 비어있는 파일을 하나 만듬. 이름은 랜덤.
+		int result=0;
 		try {
-			FileInputStream is = new FileInputStream(dto.getOrigin());// 서버에 저장된 파일 읽어서
-			
-			ServletOutputStream os = response.getOutputStream();
-			
-			int data = 0;
-			while((data=is.read())!= -1)
-				os.write(data);
-			
-		} catch (FileNotFoundException e) {
+			dto.getUploadFile().transferTo(saveFile); // 사용자가 보낸 파일을 서버의 폴더에 저장시키는 작업!
+			String str = new String(dto.getUploadFile().getOriginalFilename().getBytes("8859_1"),"utf-8"); // 한국 개발자의 설움 .. 
+			dto.setFilename(str); // 클라이언트가 업로드한 이름
+			dto.setOrigin(fileName); // 실제 서버에 저장된 이름.
+			result= fservice.tsaveFile(dto); // db에 기록하시오.
+		} catch (IllegalStateException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		} 
+		}
+		if (result == 1) {
+			return "success";
+		}
+		return "error";
 	}
+	
 }
