@@ -157,8 +157,8 @@ font-weight:700px;
 					<div class="row no-collapse-1">
 						<c:forEach items="${shoplist}" var="shop" begin="${vs.index}" end="${vs.index+2}" varStatus="count">
 							<section class="4u">
-								<a href="../images/${shop.porductImg}" class="image featured">
-									<img src="../images/${shop.porductImg}" alt="">
+								<a href="../images/shop/${shop.porductImg}" class="image featured">
+									<img src="../images/shop/${shop.porductImg}" alt="">
 								</a>
 								<div class="box">
 									<p class ="h">${shop.productHeader}</p>
