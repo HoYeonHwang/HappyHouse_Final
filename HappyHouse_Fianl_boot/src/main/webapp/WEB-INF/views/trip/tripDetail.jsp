@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="../tripassets/css/main.css" />
 <title>HappyHouse - 여행</title>
 	<body>
+	
 		<!-- Header -->
 			<header id="header" class="preview">
 				<div class="inner">

@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="../tripassets/css/main.css" />
+
 <title>HappyHouse - 여행</title>
 </head>
 <body>
@@ -21,9 +22,10 @@
 				<a href="#" class="button big alt"><span>Let's Go</span></a>
 			</div>
 			<a href="#" class="button hidden"><span>Let's Go</span></a>
+	
 		</div>
 	</header>
-
+	<a href="${pageContext.request.contextPath}/" class="button"><span>Home</span></a>
 	<!-- Main -->
 	<div id="main">
 		<div class="inner">
