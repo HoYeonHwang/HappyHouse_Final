@@ -388,10 +388,10 @@
 					center : multi,
 					zoom : 12
 				});
-				var marker = new google.maps.Marker({
-					position : multi,
-					map : map
-				});
+// 				var marker = new google.maps.Marker({
+// 					position : multi,
+// 					map : map
+// 				});
 				const legend = document.getElementById("legend");
 				for (const key in icons) {
 					const type = icons[key];
@@ -433,6 +433,8 @@
 // 					label : bizesNm,
 // 					title : bizesNm
 				});
+				map.setZoom(15);
+				map.setCenter(marker.getPosition());
 				const infowindow = new google.maps.InfoWindow({
 					content : "<div style=\"text-align:center;\"><strong>"+bizesNm+"</strong><br>" +
 							  "상권업종분류 : " + indsSclsNm +
