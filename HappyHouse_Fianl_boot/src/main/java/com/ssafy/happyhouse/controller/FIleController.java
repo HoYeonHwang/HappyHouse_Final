@@ -30,7 +30,7 @@ public class FIleController {
 	@PostMapping("/shop/uploadFile")
 	public String upload(MyFileDto dto) {
 		System.out.println("파일업로드 시작");
-		String path = "C:\\Users\\HwangHoYeon\\git\\happyhouse_final\\HappyHouse_Fianl_boot\\src\\main\\resources\\static\\images\\";
+		String path = "C:\\Users\\HwangHoYeon\\git\\happyhouse_final\\HappyHouse_Fianl_boot\\src\\main\\resources\\static\\images\\shop\\";
 		System.out.println(dto.getUploadFile());
 		File dir = new File(path);
 		if(!dir.exists()) // 파일 저장할 폴더가 없으면

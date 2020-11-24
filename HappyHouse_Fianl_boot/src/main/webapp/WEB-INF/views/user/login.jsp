@@ -54,7 +54,7 @@ h3 {
 }
 
 .bgi {
-	background-image: url( "../images/9.jpg" );
+	background-image: url( "../images/login.jpg" );
 	background-repeat: no-repeat;
 	background-size: 2000px 1000px;
 }
@@ -83,7 +83,6 @@ h3 {
 				</header>
 				<div class="flex ">
 					<div>
-						<span class="icon fa-instagram"></span>
 						<h3>로그인</h3>
 						<c:if test="${not empty msg}">
 							<script>

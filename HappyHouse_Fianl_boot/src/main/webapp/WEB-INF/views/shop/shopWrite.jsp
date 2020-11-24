@@ -8,7 +8,23 @@
 <meta charset="UTF-8">
 <title>마켓 등록</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+.a {
+	background-image: url( "../images/bg.jpg" );
+	background-repeat: no-repeat;
+	background-size: 2000px 2000px;
+}
+h2{
+font-family: 'Gugi', cursive;
+}
+label{
+font-family: 'Sunflower', sans-serif;
+font-size: 30px;
+}
 .a {
 	background-image: url( "../images/bg.jpg" );
 	background-repeat: no-repeat;

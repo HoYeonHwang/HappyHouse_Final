@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -24,12 +26,9 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-div.box p{
-font-family: 'Gugi', cursive;
-}
-td{
-font-family: 'Gugi', cursive;
-	font-size:20px;
+p td{
+font-family: 'Sunflower', sans-serif;
+font-size: 30px;
 }
 p.h{
 	font-size:50px;
@@ -143,11 +142,14 @@ font-weight:700px;
 			</div>
 		</section>
 		<!-- Extra -->
-		<div style="text-align: right;">
+		<br><br>
+		<div style="text-align: center;">
 			<a href="${pageContext.request.contextPath}/shop/shopWrite" style="margin-right: 20px;">
 				<button class="button">글작성</button>
 			</a>
 		</div>
+		<br>
+		<br>
 		<div id="extra">
 			<div class="container">
 			<c:if test="${listcount > 0}">

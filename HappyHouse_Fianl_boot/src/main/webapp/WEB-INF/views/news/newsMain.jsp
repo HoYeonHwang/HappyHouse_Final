@@ -11,10 +11,20 @@
 <link rel="stylesheet" href="../assets/css/skel.css" />
 <link rel="stylesheet" href="../assets/css/style.css" />
 <link rel="stylesheet" href="../assets/css/style-wide.css" />
-</head>
-<style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+h2{
+font-family: 'Gugi', cursive;
+}
+p{
+font-family: 'Sunflower', sans-serif;
+font-size: 20px;
+}
 .a {
-	background-image: url( "../images/9.jpg" );
+	background-image: url( "../images/newsMain.jpg" );
 	background-repeat: no-repeat;
 	background-size: 2000px 2000px;
 }

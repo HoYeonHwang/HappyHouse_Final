@@ -16,7 +16,7 @@
 
 <style>
 .a {
-	background-image: url( "../images/6.jpg" );
+	background-image: url( "../images/boardMain.jpg" );
 	background-repeat: no-repeat;
 	background-size: 2000px 2000px;
 }
@@ -38,7 +38,7 @@
 			<div class="inner">
 				<div class="box">
 					<div class="image fit">
-						<img src="../images/board.png" alt="" />
+						<img src="../images/house.jpg" alt="" />
 					</div>
 					<div class="content">
 						<header class="align-center">

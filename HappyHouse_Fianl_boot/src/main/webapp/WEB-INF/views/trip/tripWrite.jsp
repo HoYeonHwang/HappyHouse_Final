@@ -8,11 +8,17 @@
 <meta charset="UTF-8">
 <title>마켓 등록</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.a {
-	background-image: url( "../images/bg.jpg" );
-	background-repeat: no-repeat;
-	background-size: 2000px 2000px;
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+h2{
+font-family: 'Gugi', cursive;
+}
+label{
+font-family: 'Sunflower', sans-serif;
+font-size: 30px;
 }
 </style>
 <script type="text/javascript">
@@ -116,7 +122,7 @@ var sel_file;
 		<div class="inner">
 			<div class="box">
 				<div class="image fit">
-					<img src="../images/trip/7.jpg" alt="" />
+					<img src="../images/tripwrite.jpg" alt="" />
 				</div>
 				<div class="content">
 					<header class="align-center">
@@ -144,7 +150,7 @@ var sel_file;
 					        </div>
 					    </div>
 							<div style="text-align: right; display: block">
-						<input type="button" id="confirmBtn" class="btn btn-primary" value="마켓등록">
+						<input type="button" id="confirmBtn" class="btn btn-primary" value="여행지등록">
 					</div>
 				</div>
 			</div>

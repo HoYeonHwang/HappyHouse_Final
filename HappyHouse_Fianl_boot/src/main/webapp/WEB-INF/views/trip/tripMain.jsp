@@ -7,8 +7,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="../tripassets/css/main.css" />
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 <title>HappyHouse - 여행</title>
+<style type="text/css">
+h2{
+font-family: 'Gugi', cursive;
+}
+
+</style>
 </head>
 <body>
 	<!-- Header -->
@@ -17,7 +24,7 @@
 			<div class="content">
 				<h1>Trip</h1>
 				<h2>
-					Healing in the true sense<br /> is not sleep, but exploration
+					진정한 여행의 의미는<br /> 잠이아니라, 여행에서 옵니다.
 				</h2>
 				<a href="#" class="button big alt"><span>Let's Go</span></a>
 			</div>
@@ -37,8 +44,8 @@
 							<div class="image fit">
 								<a href="/trip/tripSearchOne?tripId=${triplist[count.index].tripId}">
 								<img src="../images/trip/${triplist[count.index].tripImg }" alt="" /></a>
+								<h2>${triplist[count.index].tripHeader}</h2>
 							</div>
-
 						</c:forEach>
 					</div>
 				</c:forEach>
@@ -52,7 +59,7 @@
 		<div class="inner">
 			<div class="content">
 				<h2>
-					Healing in the true sense<br /> is not sleep, but exploration
+					집에서 쉬지만 마시고<br /> 다양한 곳을 여행하세요!
 				</h2>
 				<form action="${pageContext.request.contextPath}/trip/tripSearch" method="post">
 					<input type="text" id="search" name="search">
@@ -61,7 +68,7 @@
 				</form>
 			</div>
 			<div class="copyright">
-				<h3>당신의 힐링 여행지를 공유해주세요</h3>
+				<h2>당신의 힐링 여행지를 공유해주세요!</h2>
 				<a href="${pageContext.request.contextPath}/trip/tripWrite" style="margin-right: 20px;">
 				<button>공유하기</button></a> <br>
 				&copy; Untitled. Design: <a href="/">HwangHoYeon</a>. Images: <a href="/">HwangHoYeon</a>.

@@ -7,7 +7,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="../tripassets/css/main.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Sunflower:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+h2{
+font-family: 'Gugi', cursive;
+}
+p{
+font-family: 'Sunflower', sans-serif;
+font-size: 30px;
+}
+</style>
 <title>HappyHouse - 여행</title>
+</head>
 	<body>
 	
 		<!-- Header -->
