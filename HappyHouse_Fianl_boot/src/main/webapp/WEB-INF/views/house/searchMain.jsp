@@ -8,9 +8,10 @@
 <title>APT 매매</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="assets/css/main.css" />
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 	$("#DetailBtn").on( "click", function() {
@@ -23,6 +24,20 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+.checkbox{
+	background-color: white;
+	align-items: center;
+}
+.commercial{
+	color : red;
+}
+  #legend {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
+    border: 3px solid #000;
+  }
 </style>
 </head>
 
@@ -86,6 +101,7 @@
 							datatype : 'text',
 							data:{'dong':$("#dong").val()},
 								success:function(result){
+									initApt();
 									$("#searchResult").empty();
 											$.each(result, function(index, vo) {
 												let str = "<tr class="+colorArr[index%3]+">"
@@ -116,7 +132,10 @@
 										let tmplat = vo.lat;
 										let tmplng = vo.lon;
 										let title = vo.bizesNm;
-										addMarker(tmplat, tmplng, title);
+										let indsLclsCd = vo.indsLclsCd; // 상권업종대분류코드
+										let indsSclsNm = vo.indsSclsNm; // 상권업종소분류명
+										let address = vo.rdnmAdr;
+										addCommercialMarker(tmplat, tmplng, title, indsLclsCd, indsSclsNm, address);
 									});
 								},//success
 								error:function(request,status,error){
@@ -125,7 +144,8 @@
 							}) 
 						}
 						else{
-							initMap();
+// 							initMap();
+							clear();
 						}
 					});//change
 				});//ready
@@ -295,57 +315,152 @@
 				</div>
 			</div>
 		</section>
-		<table class="table mt-2">
-			<thead>
-				<tr>
-					<th>번호</th>
-					<th>법정동</th>
-					<th>아파트이름</th>
-					<th>지번</th>
-					<th>지역코드</th>
-					<th>위도</th>
-					<th>경도</th>
-				</tr>
-			</thead>
-			<tbody id="searchResult">
-			</tbody>
-		</table>
-		<section id="three" class="wrapper style2">
-			<div class="inner">
-				<label><input class="custom-control-input" type="checkbox" id="commercialCheck" value="주변상가">주변상가</label>
-			</div>
+		<section id="" class="wrapper style2">
+			<table class="table mt-2">
+				<thead>
+					<tr>
+						<th>번호</th>
+						<th>법정동</th>
+						<th>아파트이름</th>
+						<th>지번</th>
+						<th>지역코드</th>
+						<th>위도</th>
+						<th>경도</th>
+					</tr>
+				</thead>
+				<tbody id="searchResult">
+				</tbody>
+			</table>
 		</section>
-		<div id="map" style="width: 100%; height: 500px; margin: auto;">
-			
-		</div>
+		<section class="wrapper style2">
+			<div class="" align="center">
+				<input class="" type="checkbox" id="commercialCheck" value="주변상가">주변상가
+			</div>
+			<div id="map" style="width: 80%; height: 500px; margin: auto;"></div>
+			<div id="legend"></div> 
+		</section>
 		<script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
 		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLCDvitEVxXP248HqlNI9UwV7hnZH_afQ&callback=initMap"></script>
 		<script>
-					var multi = {lat: 37.5665734, lng: 126.978179};
-					var map;
-					function initMap() {
-						map = new google.maps.Map(document.getElementById('map'), {
-							center: multi, zoom: 12
-						});
-						var marker = new google.maps.Marker({position: multi, map: map});
-					}
-					function addMarker(tmpLat, tmpLng, aptName) {
-						var marker = new google.maps.Marker({
-							position: new google.maps.LatLng(parseFloat(tmpLat),parseFloat(tmpLng)),
-							label: aptName,
-							title: aptName
-						});
-						marker.addListener('click', function() {
-							map.setZoom(17);
-							map.setCenter(marker.getPosition());
-							callHouseDealInfo();
-						});
-						marker.setMap(map);
-					}
-					function callHouseDealInfo() {
-						alert("you can call HouseDealInfo");
-					}
-				</script>
+			var markersArray = [];
+			var aptMarkersArray = [];
+			var multi = {
+				lat : 37.5665734,
+				lng : 126.978179
+			};
+			var map;
+			const icons = {
+				Q: {
+					icon: "../images/marker/food.png",
+					name: "음식점"
+				},
+// 				N: {
+// 					icon: "../images/marker/entertainment.png",
+// 					name: "여가/오락"
+// 				},
+				D: {
+					icon: "../images/marker/shopping.png",
+					name: "소매"
+				},
+				G: {
+					icon: "../images/marker/transport.png",
+					name: "교통"
+				},
+				F: {
+					icon: "../images/marker/local-services.png",
+					name: "생활서비스"
+				},
+// 				R: {
+// 					icon: "../images/marker/education.png",
+// 					name: "교육"
+// 				},
+				L: {
+					icon: "../images/marker/real-estate.png",
+					name: "부동산"
+				},
+				APT: {
+					icon: "../images/marker/residential-places.png",
+					name: "아파트"
+				},
+			};
+			function initMap() {
+				map = new google.maps.Map(document.getElementById('map'), {
+					center : multi,
+					zoom : 12
+				});
+				var marker = new google.maps.Marker({
+					position : multi,
+					map : map
+				});
+				const legend = document.getElementById("legend");
+				for (const key in icons) {
+					const type = icons[key];
+					const name = type.name;
+					const icon = type.icon;
+					const div = document.createElement("div");
+					div.innerHTML = '<img src="' + icon + '"> ' + name;
+					legend.appendChild(div);
+				}
+				map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+			}
+			function addMarker(tmpLat, tmpLng, aptName) {
+				var marker = new google.maps.Marker({
+					position : new google.maps.LatLng(parseFloat(tmpLat),
+							parseFloat(tmpLng)),
+// 					label : aptName,
+// 					title : aptName,
+					icon : "../images/marker/residential-places.png"
+				});
+				const infowindow = new google.maps.InfoWindow({
+					content : "<div style=\"text-align:center;\"><strong>"+aptName+"</strong><br>" +
+// 							  "상권업종분류 : " + indsSclsNm +
+// 							  "<br>도로명주소 : " + address +
+							  "</div>"
+				});
+				marker.addListener('click', function() {
+					map.setZoom(15);
+					map.setCenter(marker.getPosition());
+					infowindow.open(map, marker);
+				});
+				marker.setMap(map);
+				aptMarkersArray.push(marker);
+			}
+			function addCommercialMarker(tmpLat, tmpLng, bizesNm, indsLclsCd, indsSclsNm, address) {
+				var marker = new google.maps.Marker({
+					position : new google.maps.LatLng(parseFloat(tmpLat),
+							parseFloat(tmpLng)),
+					icon : icons[indsLclsCd].icon,
+// 					label : bizesNm,
+// 					title : bizesNm
+				});
+				const infowindow = new google.maps.InfoWindow({
+					content : "<div style=\"text-align:center;\"><strong>"+bizesNm+"</strong><br>" +
+							  "상권업종분류 : " + indsSclsNm +
+							  "<br>도로명주소 : " + address +
+							  "</div>"
+				});
+				marker.addListener('click', function() {
+					map.setZoom(15);
+					map.setCenter(marker.getPosition());
+					infowindow.open(map, marker);
+				});
+				marker.setMap(map);
+				if(indsLclsCd != "apt"){
+					markersArray.push(marker);
+				}
+			}
+			function clear(){
+				for (var i = 0; i < markersArray.length; i++ ) {
+					markersArray[i].setMap(null);
+				}
+			}
+			function initApt(){
+				clear();
+				for (var i = 0; i < aptMarkersArray.length; i++ ) {
+					aptMarkersArray[i].setMap(null);
+				}
+			}
+		</script>
 	</div>
 </body>
 </html>

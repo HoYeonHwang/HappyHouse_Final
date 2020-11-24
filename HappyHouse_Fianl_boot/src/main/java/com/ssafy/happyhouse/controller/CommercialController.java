@@ -35,6 +35,9 @@ public class CommercialController {
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
+		if(dongcode==null) {
+			return null;
+		}
 		String result = "";
 		List<CommercialDto> list_dto = null;
 		System.out.println(dongcode);
@@ -62,9 +65,12 @@ public class CommercialController {
 				JSONObject commercialInfo = (JSONObject) items.get(i);
 				String bizesId = (String) commercialInfo.get("bizesId");
 				String bizesNm = (String) commercialInfo.get("bizesNm");
+				String indsLclsCd = (String) commercialInfo.get("indsLclsCd");
+				String indsSclsNm = (String) commercialInfo.get("indsSclsNm");
+				String rdnmAdr = (String) commercialInfo.get("rdnmAdr");
 				Double lon = (Double) commercialInfo.get("lon");
 				Double lat = (Double) commercialInfo.get("lat");
-				list_dto.add(new CommercialDto(bizesId, bizesNm, lon, lat));
+				list_dto.add(new CommercialDto(bizesId, bizesNm, indsLclsCd, indsSclsNm, rdnmAdr, lon, lat));
 				System.out.println(list_dto.get(i));
 			}
             br.close();
