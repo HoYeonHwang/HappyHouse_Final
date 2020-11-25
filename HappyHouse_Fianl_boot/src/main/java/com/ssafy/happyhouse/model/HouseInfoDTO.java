@@ -1,7 +1,7 @@
 package com.ssafy.happyhouse.model;
 
 public class HouseInfoDTO {
-
+	private String nno;
 	private String no;
 	private String dong;
 	private String AptName;
@@ -10,14 +10,16 @@ public class HouseInfoDTO {
 	private String jibun;
 	private String lat;
 	private String lng;
-	private String img;
+	private String dealAmount;
 	
 	
 	
 	public HouseInfoDTO() {
 	}
-	public HouseInfoDTO(String no, String dong, String aptName, String code, String buildYear, String jibun, String lat,
-			String lng, String img) {
+	
+	public HouseInfoDTO(String nno, String no, String dong, String aptName, String code, String buildYear, String jibun,
+			String lat, String lng, String dealAmount) {
+		this.nno = nno;
 		this.no = no;
 		this.dong = dong;
 		AptName = aptName;
@@ -26,8 +28,17 @@ public class HouseInfoDTO {
 		this.jibun = jibun;
 		this.lat = lat;
 		this.lng = lng;
-		this.img = img;
+		this.dealAmount = dealAmount;
 	}
+	
+	public String getNno() {
+		return nno;
+	}
+
+	public void setNno(String nno) {
+		this.nno = nno;
+	}
+
 	public String getNo() {
 		return no;
 	}
@@ -76,15 +87,15 @@ public class HouseInfoDTO {
 	public void setLng(String lng) {
 		this.lng = lng;
 	}
-	public String getImg() {
-		return img;
+	public String getDealAmount() {
+		return dealAmount;
 	}
-	public void setImg(String img) {
-		this.img = img;
+	public void setDealAmount(String dealAmount) {
+		this.dealAmount = dealAmount;
 	}
 	@Override
 	public String toString() {
 		return "HouseInfoDTO [no=" + no + ", dong=" + dong + ", AptName=" + AptName + ", code=" + code + ", buildYear="
-				+ buildYear + ", jibun=" + jibun + ", lat=" + lat + ", lng=" + lng + ", img=" + img + "]";
+				+ buildYear + ", jibun=" + jibun + ", lat=" + lat + ", lng=" + lng + ", dealAmount=" + dealAmount + "]";
 	}
 }

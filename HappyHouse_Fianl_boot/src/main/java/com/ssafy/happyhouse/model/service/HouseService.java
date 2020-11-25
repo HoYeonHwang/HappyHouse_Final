@@ -14,5 +14,6 @@ public interface HouseService {
 	public List<HouseInfoDTO> getyearSearch(String search) throws Exception;
 	public List<VillaInfoDTO> getvillaSearch(String search) throws Exception;
 	public List<HouseInfoDTO> getAptInDong(String dong) throws Exception;
+	public List<HouseInfoDTO> getAptInDongSearch(String dong, String search) throws Exception;
 	public String getDongCode(String dong) throws Exception;
 }

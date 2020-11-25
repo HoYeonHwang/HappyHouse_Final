@@ -20,10 +20,18 @@
 			ORDER BY dong
 		</select>
 		<select id="getAptInDong" parameterType="String" resultType="com.ssafy.happyhouse.model.HouseInfoDTO">
-			SELECT no,dong,AptName,code,jibun 
-			FROM houseinfo 
-			WHERE dong = #{dong}
-			ORDER BY AptName
+			SELECT ROW_NUMBER() OVER(order by NO ) AS nno, A.no, A.dong, A.AptName, A.code, A.jibun, B.dealAmount, A.lat, A.lng
+			FROM houseinfo A INNER JOIN housedeal B
+			ON A.no = B.no 
+			WHERE A.dong = #{dong}
+			ORDER BY nno
+		</select>
+		<select id="getAptInDongSearch" parameterType="String" resultType="com.ssafy.happyhouse.model.HouseInfoDTO">
+			SELECT ROW_NUMBER() OVER(order by A.NO ) AS nno, A.no, A.dong, A.AptName, A.code, A.jibun, B.dealAmount, A.lat, A.lng
+			FROM houseinfo A INNER JOIN housedeal B
+			ON A.no = B.no
+			WHERE A.dong = #{dong} AND A.AptName LIKE CONCAT('%', #{search}, '%')
+			ORDER BY nno
 		</select>
 		<select id="getAllsearch" parameterType="String" resultType="com.ssafy.happyhouse.model.HouseInfoDTO">
 			SELECT * 

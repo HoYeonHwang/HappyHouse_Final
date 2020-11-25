@@ -45,7 +45,7 @@ p {
 			<ul class="links">
 				<li><a href="${pageContext.request.contextPath}/">Home - 홈</a></li>
 				<li><a href="${pageContext.request.contextPath}/projectInfo">Project - 프로젝트</a></li>
-				<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 방구하기</a></li>
+				<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 부동산</a></li>
 				<li><a href="${pageContext.request.contextPath}/news/newsMain">News - 뉴스</a></li>
 				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Market - 마켓</a></li>
 				<li><a href="${pageContext.request.contextPath}/trip/tripMain">Trip - 여행</a></li>
@@ -110,7 +110,7 @@ p {
 						<p>HappyHouse프로젝트는 힐링을 주제로 집을 구하고 다양한 정보 제공을 베이스로 제작되었습니다. 
 						부동산 관련 뉴스, 이사관련 마켓, 힐링 여행지 추천, 주변 상권 및 정보조회, 등 힐링을 주제로 여러 기능을 제공할 뿐만 아니라 개인이 마땅히 누려야할 여가생활과 한 사람의 일생을 풍요롭게 만들기 위한 다양한 기능들을 직관적으로 제공하기 위해 노력하고있습니다. 
 						또한, 이에 그치지 않고 다양한 기능들을 구상하며 차츰 발전된 프로젝트를 구상하며 앞으로 나아가고 있습니다.</p>
-						<p>HappyHouse 방구하기  <br>HaapyHouse 방구하기는 원하는 지역의 아파트, 주택 매물을 검색할 수 있도록 만들어진 기능입니다. 더 나아가 주변에 어떤 상가들이 있는지 알 수 있어 선택에 도움이 될 것입니다. 집을 구하고 있다면 방구하기 기능을 이용해 보는 것은 어떨까요?</p>
+						<p>HappyHouse 부동산  <br>HaapyHouse 부동산은 원하는 지역의 아파트, 주택 매물을 검색할 수 있도록 만들어진 기능입니다. 더 나아가 주변에 어떤 상가들이 있는지 알 수 있어 선택에 도움이 될 것입니다. 집을 구하고 있다면 방구하기 기능을 이용해 보는 것은 어떨까요?</p>
 						<p>News 뉴스  <br> HappyHouse 뉴스는 힐링이라는 키워드를가지고 뉴스 페이지를 크롤링하여 사용자들에게 제공하기 위해 만들어진 기능입니다. 하루하루 겉잡을 수 없이 변해가는 정보화 사회에서 다양한 정보를 아는것이 진정한 힐링으로의 시작되지 않을까요? </p>
 						<p>Market 마켓 <br> HappyHouse 마켓은 자본주의 사회에서 소비야 말로 진정한 힐링이다 라는 이데올로기에서 출발하였습니다. 다양한 사람들이 다양한 물품들을 다양한 가격으로 판매하는것이 건전한 소비생활을 만드는것이고 이것이 HappyHouse에서 추구하는 힐링입니다.HappyHouse 마켓은 다양한 상품들을 선보이며 고객님들의 FLEX를 응원합니다. </p>
 						<p>Trip 여행  <br> HappyHouse여행은 집에서 쉬고 잠자는것만이 힐링이 아닌 훌쩍 여행을 떠나며 낭만, 젊음, 사랑을 느끼는것에서 온다는 이데올로기에서 출발하였습니다. 포스트 코로나 시대에 어디론가 훌쩍 떠날 순 없지만 내가 느꼇던 다양한 낭만과 젊음, 사랑을 다른 사람들과 공유하며 새로운 세계를 선보이는것도 또 하나의 여행이 될 수 있지 않을까요?</p>

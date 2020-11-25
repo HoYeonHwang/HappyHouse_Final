@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,8 +63,15 @@ public class HouseController {
 	}
 	@RequestMapping(value = "/apt", method = RequestMethod.GET)
 	@ResponseBody
-	public List<HouseInfoDTO> searchapt(@RequestParam("dong") String dong,Model model) throws Exception {
+	public List<HouseInfoDTO> searchapt(@RequestParam("dong") String dong,  Model model) throws Exception {
 		List<HouseInfoDTO> result = houseService.getAptInDong(dong);
+		return result;
+	}
+	@RequestMapping(value = "/aptInSearch", method = RequestMethod.GET)
+	@ResponseBody
+	public List<HouseInfoDTO> searchapt2(@RequestParam("dong") String dong, @RequestParam("search") String search,  Model model) throws Exception {
+		System.out.println("dong: " +dong+"search: " + search);
+		List<HouseInfoDTO> result = houseService.getAptInDongSearch(dong, search);
 		return result;
 	}
 	
