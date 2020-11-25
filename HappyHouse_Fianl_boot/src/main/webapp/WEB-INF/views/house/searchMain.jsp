@@ -20,7 +20,7 @@
 	</script>
 <style>
 .a {
-	background-image: url( "../images/12.jpg" );
+	background-image: url( "../images/houseMain.jpg" );
 	background-repeat: no-repeat;
 	background-size: cover;
 }
