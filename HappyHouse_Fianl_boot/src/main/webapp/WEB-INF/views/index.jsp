@@ -61,7 +61,7 @@ p {
 			<ul class="links">
 				<li><a href="${pageContext.request.contextPath}/">Home - 홈</a></li>
 				<li><a href="${pageContext.request.contextPath}/projectInfo">Project - 프로젝트</a></li>
-				<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 방구하기</a></li>
+				<li><a href="${pageContext.request.contextPath}/house/searchMain">Happyhouse - 부동산</a></li>
 				<li><a href="${pageContext.request.contextPath}/news/newsMain">News - 뉴스</a></li>
 				<li><a href="${pageContext.request.contextPath}/shop/shopMain">Market - 마켓</a></li>
 				<li><a href="${pageContext.request.contextPath}/trip/tripMain">Trip - 여행</a></li>

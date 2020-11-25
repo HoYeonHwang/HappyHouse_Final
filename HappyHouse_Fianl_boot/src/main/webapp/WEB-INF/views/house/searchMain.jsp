@@ -106,6 +106,10 @@
 								let indsLclsCd = vo.indsLclsCd; // 상권업종대분류코드
 								let indsSclsNm = vo.indsSclsNm; // 상권업종소분류명
 								let address = vo.rdnmAdr;
+								if(indsLclsCd=="R" || indsLclsCd=="N"){
+									console.log("??");
+									indsLclsCd = "F";
+								}
 								addCommercialMarker(tmplat, tmplng, title, indsLclsCd, indsSclsNm, address);
 							});
 						},//success
@@ -151,7 +155,6 @@
 														$("#searchResult").append(str);
 							 							addMarker(vo.lat, vo.lng, vo.aptName, vo.jibun, dealAmount);
 						 							});//each
-// 													geocode(result);
 												},//success
 										error:function(request,status,error){
 											console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -215,7 +218,6 @@
 													$("#searchResult").append(str);
 						 							addMarker(vo.lat, vo.lng, vo.aptName, vo.jibun, dealAmount);
 					 							});//each
-// 												geocode(result);
 											},//success
 									error:function(request,status,error){
 										console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
@@ -339,7 +341,7 @@
 					name: "교통"
 				},
 				F: {
-					icon: "../images/marker/local-services.png",
+					icon: "../images/marker/fashion.png",
 					name: "생활서비스"
 				},
 // 				R: {
@@ -421,9 +423,7 @@
 					infowindow.open(map, marker);
 				});
 				marker.setMap(map);
-				if(indsLclsCd != "apt"){
-					markersArray.push(marker);
-				}
+				markersArray.push(marker);
 			}
 			function clear(){
 				for (var i = 0; i < markersArray.length; i++ ) {
