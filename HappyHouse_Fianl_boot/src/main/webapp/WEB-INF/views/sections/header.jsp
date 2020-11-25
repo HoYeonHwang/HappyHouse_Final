@@ -16,7 +16,7 @@
 	<header id="header">
 		<div class="logo">
 			<a href="/">
-				HappyHouse <span>by 낭만, 젊음, 사랑</span>
+				HappyHouse <span>by 소통, 힐링, 방구석</span>
 			</a>
 		</div>
 		<a href="#menu" class="toggle">

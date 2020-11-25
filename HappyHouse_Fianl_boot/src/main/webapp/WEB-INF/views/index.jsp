@@ -33,7 +33,7 @@ p {
 	<!-- Header -->
 	<header id="header" class="alt">
 		<div class="logo">
-			<a href="${pageContext.request.contextPath}/"> HappyHouse <span>by 낭만, 젊음, 사랑</span>
+			<a href="${pageContext.request.contextPath}/"> HappyHouse <span>by 소통, 힐링, 방구석</span>
 			</a>
 		</div>
 		<a href="#menu" class="toggle"> <span>Menu</span>
