@@ -334,7 +334,7 @@
 		</section>
 		<section class="wrapper style2">
 			<div class="" align="center">
-				<input class="" type="checkbox" id="commercialCheck" value="주변상가">주변상가
+				<input class="" type="checkbox" id="commercialCheck" value="주변상가">주변시설
 			</div>
 			<div id="map" style="width: 80%; height: 500px; margin: auto;"></div>
 			<div id="legend"></div> 
@@ -417,6 +417,8 @@
 // 							  "<br>도로명주소 : " + address +
 							  "</div>"
 				});
+				map.setZoom(15);
+				map.setCenter(marker.getPosition());
 				marker.addListener('click', function() {
 					map.setZoom(15);
 					map.setCenter(marker.getPosition());
